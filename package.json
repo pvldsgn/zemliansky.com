@@ -1,0 +1,24 @@
+{
+  "name": "zemliansky.com",
+  "version": "1.0.0",
+  "description": "Designer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvldsgn/zemliansky.com.git"
+  },
+  "keywords": [
+    "designer",
+    "web",
+    "developer"
+  ],
+  "author": "Pavel Zemlianskii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pvldsgn/zemliansky.com/issues"
+  },
+  "homepage": "https://github.com/pvldsgn/zemliansky.com#readme"
+}
