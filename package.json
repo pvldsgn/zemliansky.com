@@ -2,7 +2,8 @@
   "name": "zemliansky.com",
   "version": "1.0.0",
   "description": "Designer",
-  "main": "index.js",
+  "main": "gulpfile.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/pvldsgn/zemliansky.com/issues"
   },
-  "homepage": "https://github.com/pvldsgn/zemliansky.com#readme"
+  "homepage": "https://github.com/pvldsgn/zemliansky.com#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
