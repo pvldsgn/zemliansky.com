@@ -6,6 +6,7 @@ global.app = {
     gulp: gulp
 }
 
+
 // Задачи
 import { copy } from "./gulp/tasks/copy.js";
 import { reset } from "./gulp/tasks/reset.js";
