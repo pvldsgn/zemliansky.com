@@ -9,22 +9,26 @@ global.app = {
 }
 
 
-// Задачи
+// tasks
 import { copy } from "./gulp/tasks/copy.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { scss } from "./gulp/tasks/scss.js";
 
 
 // Изменение файлов
 function watcher() {
     gulp.watch(path.watch.files, copy);
-    gulp.watch(path.watch.html, html)
+    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.scss, scss);
 }
 
-const mainTasks = gulp.parallel(copy, html)
+// main tasks
+const mainTasks = gulp.parallel(copy, html, scss)
 
-// Сценарии
-const dev = gulp.series(reset, mainTasks, copy, watcher);
+// scripts
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 
-// Выполнение
+// start
 gulp.task('default', dev);

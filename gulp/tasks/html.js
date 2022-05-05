@@ -10,8 +10,8 @@ export const html = () => {
                 message: "Error: <%= error.message %>"
             })
         ))
-        .pipe(fileinclude())
         .pipe(app.plugins.replace(/@img\//g, 'img/'))
+        .pipe(fileinclude())
         .pipe(webHtmlNosvg())
         .pipe(
             versionNumber({
@@ -30,4 +30,5 @@ export const html = () => {
             })
         )
         .pipe(app.gulp.dest(app.path.build.html))
+        .pipe(app.plugins.browsersync.stream())
 }
