@@ -1,20 +1,125 @@
 @import "fonts";
 
+/* main */
+
 * {
     margin: 0;
 }
 
 body {
     background-color: #dadada;
+}
+
+
+/* fonts */
+span {
+    font-family: Manrope, sans-serif;
+    font-size: .7rem;
+    font-weight: 600;
+    line-height: 110%;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: Manrope, sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 110%;
+    text-transform: uppercase;
+}
+
+.title {
+    text-align: center;
+}
+
+/* header */
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    position: sticky;
+    margin: 1em;
+    top: 1em;
+    align-items: center;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+    gap: .5em;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+/* arrow */
+.down {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    position: sticky;
+    bottom: 1em;
+}
 
-    span {
-        color: rgb(0, 0, 0);
-        font-family: Manrope;
-        font-weight: 800;
-        font-size: 8em;
+/* content */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    height: 75.5em;
+    margin: 1em;
+
+    @media (min-width:767px) {
+        align-items: center;
     }
 }
+
+
+/* card */
+
+.card {
+    height: 70vh;
+    border-radius: 1.5em;
+    background-image: url('https://images.unsplash.com/photo-1591931681345-16b532514cde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGxpdmluZyUyMHJvb20lMjBhcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=1600&q=60');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width:767px) {
+        min-width: 25rem;
+        height: 78vh;
+    }
+}
+
+.card-title {
+    margin-top: 2em;
+    text-align: center;
+    color: #f3f3f3;
+}
+
+.card-info {
+    text-align: center;
+    color: #f3f3f3;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 23em;
+}
+
+
+
+
+// .card-2 {
+//     height: 50vh;
+//     border-radius: 1.5em;
+//     background-image: url('https://images.unsplash.com/photo-1491336477066-31156b5e4f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center;
+// }
