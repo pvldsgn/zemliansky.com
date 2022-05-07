@@ -10,7 +10,8 @@ export const path = {
         css: `${buildFolder}/css/`,
         js: `${buildFolder}/js/`,
         files: `${buildFolder}/files/`,
-        images: `${buildFolder}/img/`
+        images: `${buildFolder}/img/`,
+        fonts: `${buildFolder}/fonts/`,
     },
     src: {
         html: `${srcFolder}/*.html`, //.pug
