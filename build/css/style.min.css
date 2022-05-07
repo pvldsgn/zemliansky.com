@@ -49,18 +49,24 @@
 }
 /* main */
 * {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: #dadada;
+  -webkit-text-size-adjust: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* fonts */
 span {
   font-family: Manrope, sans-serif;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 110%;
   text-transform: uppercase;
 }
@@ -68,13 +74,15 @@ span {
 h2 {
   font-family: Manrope, sans-serif;
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 110%;
   text-transform: uppercase;
 }
 
 .title {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* header */
@@ -93,11 +101,6 @@ header {
   gap: 0.5em;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-}
-
 /* arrow */
 .down {
   display: flex;
@@ -105,8 +108,24 @@ header {
   align-items: center;
   position: sticky;
   bottom: 1em;
+  animation: bounce 2s infinite;
 }
 
+@keyframes bounce {
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+  }
+  0% {
+    transform: translateY(0);
+  }
+}
 /* content */
 main {
   display: flex;
@@ -132,6 +151,21 @@ main {
 }
 @media (min-width: 767px) {
   .card {
+    min-width: 25rem;
+    height: 78vh;
+  }
+}
+
+.card-2 {
+  height: 70vh;
+  border-radius: 1.5em;
+  background-image: url("https://images.unsplash.com/photo-1491336477066-31156b5e4f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (min-width: 767px) {
+  .card-2 {
     min-width: 25rem;
     height: 78vh;
   }
