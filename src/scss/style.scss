@@ -9,12 +9,47 @@
     padding: 0;
 }
 
+:root {
+    --accent: #dadada;
+    --sindex: calc(1vw + 1vh);
+    --transition: cubic-bezier(0, 0.9, 0.7, 1);
+}
+
+/* content */
+
 body {
-    background-color: #dadada;
+    background-color: var(--accent);
     -webkit-text-size-adjust: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    .arrow-down {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        bottom: 1em;
+        animation: bounce 2s infinite;
+
+        @keyframes bounce {
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+                -webkit-transform: translateY(-10px);
+                -moz-transform: translateY(-10px);
+                -ms-transform: translateY(-10px);
+                -o-transform: translateY(-10px);
+            }
+
+            0% {
+                transform: translateY(0);
+            }
+        }
+    }
 }
 
 
@@ -38,12 +73,6 @@ h2 {
     @include font
 }
 
-.title {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
 
 /* header */
 
@@ -54,40 +83,18 @@ header {
     margin: 1em;
     top: 1em;
     align-items: center;
-}
 
-.social {
-    display: flex;
-    justify-content: flex-end;
-    gap: .5em;
-}
-
-/* arrow */
-
-.down {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    bottom: 1em;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    100% {
-        transform: translateY(0);
+    .social-icons {
+        display: flex;
+        justify-content: flex-end;
+        gap: .5em;
     }
 
-    50% {
-        transform: translateY(-10px);
-        -webkit-transform: translateY(-10px);
-        -moz-transform: translateY(-10px);
-        -ms-transform: translateY(-10px);
-        -o-transform: translateY(-10px);
-    }
-
-    0% {
-        transform: translateY(0);
+    // for font
+    .title-header {
+        display: flex;
+        justify-content: center;
+        text-align: center;
     }
 }
 
@@ -104,53 +111,51 @@ main {
     @media (min-width:767px) {
         align-items: center;
     }
-}
 
+    /* card */
 
-/* card */
+    .card-item {
+        height: 70vh;
+        border-radius: 1.5em;
+        overflow: hidden;
 
-.card {
-    height: 70vh;
-    border-radius: 1.5em;
-    background-image: url('https://images.unsplash.com/photo-1591931681345-16b532514cde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGxpdmluZyUyMHJvb20lMjBhcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=1600&q=60');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+        @media (min-width:767px) {
+            min-width: 25rem;
+            height: calc(var(--sindex)*25);
+        }
 
-    @media (min-width:767px) {
-        min-width: 25rem;
-        height: 78vh;
+        .card-bg {
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &:hover {
+                transform: scale(1.2);
+                -webkit-transform: scale(1.2);
+                -moz-transform: scale(1.2);
+                -ms-transform: scale(1.2);
+                -o-transform: scale(1.2);
+            }
+        }
+
+        .card-title {
+            margin-top: 2em;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .card-info {
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .card-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(var(--sindex)*18);
+        }
     }
-}
 
-.card-2 {
-    height: 70vh;
-    border-radius: 1.5em;
-    background-image: url('https://images.unsplash.com/photo-1491336477066-31156b5e4f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    @media (min-width:767px) {
-        min-width: 25rem;
-        height: 78vh;
-    }
-}
-
-.card-title {
-    margin-top: 2em;
-    text-align: center;
-    color: #f3f3f3;
-}
-
-.card-info {
-    text-align: center;
-    color: #f3f3f3;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 23em;
 }
