@@ -19,10 +19,12 @@
 
 body {
     background-color: var(--accent);
-    -webkit-text-size-adjust: none;
     text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     .arrow-down {
         display: flex;
@@ -34,19 +36,27 @@ body {
 
         @keyframes bounce {
             100% {
-                transform: translateY(0);
+                transform: translateY(10px);
+                -webkit-transform: translateY(10px);
+                -moz-transform: translateY(10px);
+                -ms-transform: translateY(10px);
+                -o-transform: translateY(10px);
             }
 
             50% {
-                transform: translateY(-10px);
-                -webkit-transform: translateY(-10px);
-                -moz-transform: translateY(-10px);
-                -ms-transform: translateY(-10px);
-                -o-transform: translateY(-10px);
+                transform: translateY(-5px);
+                -webkit-transform: translateY(-5px);
+                -moz-transform: translateY(-5px);
+                -ms-transform: translateY(-5px);
+                -o-transform: translateY(-5px);
             }
 
             0% {
-                transform: translateY(0);
+                transform: translateY(10px);
+                -webkit-transform: translateY(10px);
+                -moz-transform: translateY(10px);
+                -ms-transform: translateY(10px);
+                -o-transform: translateY(10px);
             }
         }
     }
@@ -83,6 +93,7 @@ header {
     margin: 1em;
     top: 1em;
     align-items: center;
+    z-index: 1;
 
     .social-icons {
         display: flex;
@@ -118,29 +129,30 @@ main {
         height: 70vh;
         border-radius: 1.5em;
         overflow: hidden;
-
-        @media (min-width:767px) {
-            min-width: 25rem;
-            height: calc(var(--sindex)*25);
-        }
+        perspective: 1px;
+        cursor: pointer;
 
         .card-bg {
-            height: 100%;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            transition: 1s;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+        }
 
-            &:hover {
-                transform: scale(1.2);
-                -webkit-transform: scale(1.2);
-                -moz-transform: scale(1.2);
-                -ms-transform: scale(1.2);
-                -o-transform: scale(1.2);
-            }
+
+        @media (min-width:767px) {
+            min-width: 25rem;
+            height: calc(var(--sindex)*26);
         }
 
         .card-title {
-            margin-top: 2em;
+            margin-top: 3em;
             text-align: center;
             color: var(--accent);
         }
@@ -154,7 +166,11 @@ main {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(var(--sindex)*18);
+            height: calc(var(--sindex)*30);
+
+            @media (min-width:767px) {
+                height: calc(var(--sindex)*16);
+            }
         }
     }
 
