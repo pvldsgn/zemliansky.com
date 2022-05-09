@@ -26,6 +26,7 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
 
+
     .arrow-down {
         display: flex;
         justify-content: center;
@@ -103,11 +104,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 5em;
-    height: 76.3em;
+    height: 96.75em;
     margin: 1em;
 
     @media (min-width:767px) {
-        height: 76.1em;
+        height: 95.75em;
         align-items: center;
     }
 
@@ -116,7 +117,7 @@ main {
     .card-item {
         position: relative;
         z-index: -2;
-        height: 70vh;
+        min-height: 70vh;
         border-radius: 1em;
         overflow: hidden;
         cursor: pointer;
@@ -124,7 +125,7 @@ main {
         .card-bg {
             position: absolute;
             z-index: -1;
-            top: -20em;
+            top: -7em;
             right: 0;
             left: 0;
             bottom: 0;
@@ -133,10 +134,15 @@ main {
             background-position: center;
         }
 
+        .mp4 {
+            left: -24em;
+            top: -7em;
+        }
+
 
         @media (min-width:767px) {
             min-width: 25rem;
-            height: calc(var(--sindex)*26);
+            min-height: calc(var(--sindex)*26);
         }
 
         .card-title {
