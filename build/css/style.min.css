@@ -73,32 +73,19 @@ body {
 body .arrow-down {
   display: flex;
   justify-content: center;
-  align-items: center;
   position: sticky;
   bottom: 1em;
   animation: bounce 2s infinite;
 }
 @keyframes bounce {
   100% {
-    transform: translateY(10px);
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
-    -ms-transform: translateY(10px);
-    -o-transform: translateY(10px);
+    transform: translateY(-15px);
   }
   50% {
-    transform: translateY(-5px);
-    -webkit-transform: translateY(-5px);
-    -moz-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    -o-transform: translateY(-5px);
+    transform: translateY(0px);
   }
   0% {
-    transform: translateY(10px);
-    -webkit-transform: translateY(10px);
-    -moz-transform: translateY(10px);
-    -ms-transform: translateY(10px);
-    -o-transform: translateY(10px);
+    transform: translateY(-15px);
   }
 }
 
@@ -145,30 +132,31 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5em;
-  height: 75.5em;
+  height: 76.3em;
   margin: 1em;
   /* card */
 }
 @media (min-width: 767px) {
   main {
+    height: 76.1em;
     align-items: center;
   }
 }
 main .card-item {
+  position: relative;
+  z-index: -2;
   height: 70vh;
-  border-radius: 1.5em;
+  border-radius: 1em;
   overflow: hidden;
-  perspective: 1px;
   cursor: pointer;
 }
 main .card-item .card-bg {
   position: absolute;
   z-index: -1;
-  top: 0;
+  top: -20em;
   right: 0;
   left: 0;
   bottom: 0;
-  transition: 1s;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
