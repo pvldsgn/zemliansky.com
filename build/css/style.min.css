@@ -132,7 +132,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 5em;
-  height: 96.75em;
+  height: 96.3em;
   margin: 1em;
   /* card */
 }
@@ -157,6 +157,18 @@ main .card-item .card-bg {
   right: 0;
   left: 0;
   bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main .card-item .card-bg .card-mobile {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: -25em;
+  transform: scale(0.5) translateY(25em);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

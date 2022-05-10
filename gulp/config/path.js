@@ -18,7 +18,7 @@ export const path = {
         scss: `${srcFolder}/scss/style.scss`,
         js: `${srcFolder}/js/app.js`,
         files: `${srcFolder}/files/**/*.*`,
-        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
+        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,mp4}`,
         svg: `${srcFolder}/img/**/*.svg`,
         svgicons: `${srcFolder}/img/svg/*.svg`
     },
@@ -27,7 +27,7 @@ export const path = {
         scss: `${srcFolder}/scss/**/*.scss`,
         js: `${srcFolder}/js/**/*.js`,
         files: `${srcFolder}/files/**/*.*`,
-        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`
+        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp,mp4}`
     },
     clean: buildFolder,
     buildFolder: buildFolder,

@@ -104,7 +104,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 5em;
-    height: 96.75em;
+    height: 96.3em;
     margin: 1em;
 
     @media (min-width:767px) {
@@ -132,6 +132,19 @@ main {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+
+            .card-mobile {
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: -25em;
+                transform: scale(.5) translateY(25em);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
         }
 
         .mp4 {

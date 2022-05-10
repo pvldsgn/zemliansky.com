@@ -6,7 +6,7 @@
 
 <body>
     @@include('html/header.html',{})
-    <main class="main">
+    <main id="main-page" class="main">
         <div class="card-item">
             <div class="card-title">
                 <h2>Whatplace</h2>
@@ -31,13 +31,10 @@
             <div class="card-logo">
                 <img src="@img/tassovec/logo.svg" alt="" />
             </div>
-            <video class="card-bg mp4" autoplay loop muted height="150%">
-                <source
-                    src="https://cdn.dribbble.com/users/501822/screenshots/14394736/media/f86b38848b0a60bfc33d432686037d16.mp4"
-                    type="video/mp4" />
-                <source src="movie.ogg" type="video/ogg" />
-                Your browser does not support the video tag.
-            </video>
+            <div class="card-bg" style="background-image: url('@img/tassovec/preview.png');">
+                <div class="card-mobile" style="background-image: url('@img/tassovec/mobile.png');">
+                </div>
+            </div>
         </div>
         <div class="card-item">
             <div class="card-title">
@@ -63,7 +60,10 @@
             <div class="card-logo">
                 <img src="@img/today/logo.svg" alt="" />
             </div>
-            <div class="card-bg" style="background-image: url('@img/today/preview.png');">
+            <div class="card-bg"
+                style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80');">
+                <div class="card-mobile" style="background-image: url('@img/today/mobile.png');">
+                </div>
             </div>
         </div>
     </main>
@@ -72,6 +72,7 @@
     </div>
     @@include('html/footer.html',{})
     <script src="js/app.min.js"></script>
+
 </body>
 
 </html>

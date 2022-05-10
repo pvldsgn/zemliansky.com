@@ -9,13 +9,27 @@ flsFunctions.isWebp();
 // info
 // document.getElementsByClassName('card-item')[0].style = "border-radius: 5em";
 
+// ROUTING
+// 
+// 
 
+// ANIMATE
+//
 // parallax-card
 gsap.to(".card-bg", {
     scrollTrigger: {
         scrub: 2
     },
-    y: 100
+    y: 110
+});
+
+// move mobile
+gsap.to(".card-mobile", {
+    scrollTrigger: {
+        scrub: 2
+    },
+    scale: 1.5,
+    y: -10
 });
 
 
