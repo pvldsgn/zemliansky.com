@@ -1,3 +1,12 @@
-<svg width="29" height="43" viewBox="0 0 29 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11.6785 0H17.3819V33.4477L25.4995 25.512L29 28.892L14.4849 43L0 28.892L3.50052 25.512L11.6785 33.4771V0Z" fill="#121212"/>
+<svg 
+    width="29" 
+    height="43" 
+    viewBox="0 0 29 43" 
+    fill="none"
+    style="mix-blend-mode: difference;" 
+    xmlns="http://www.w3.org/2000/svg">
+    <path 
+        d="M11.6785 0H17.3819V33.4477L25.4995 25.512L29 28.892L14.4849 43L0 28.892L3.50052 25.512L11.6785 33.4771V0Z" 
+        fill="#dadada"
+    />
 </svg>

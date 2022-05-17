@@ -6,13 +6,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 flsFunctions.isWebp();
 
-// info
-// document.getElementsByClassName('card-item')[0].style = "border-radius: 5em";
-
-// ROUTING
-// 
-// 
-
 // ANIMATE
 //
 // parallax-card
@@ -21,6 +14,13 @@ gsap.to(".card-bg", {
         scrub: 2
     },
     y: 110
+});
+
+gsap.to(".main-bg", {
+    scrollTrigger: {
+        scrub: 2
+    },
+    y: 150
 });
 
 // move mobile
@@ -32,23 +32,35 @@ gsap.to(".card-mobile", {
     y: -10
 });
 
+gsap.to(".arrow", {
+    scrollTrigger: {
+        scrub: 2
+    },
+    opacity: 0
+});
 
 // smooth scroll
-const scrollWrap = document.getElementsByClassName("main")[0],
-    speed = 0.1;
 
-var offset = 0;
+// const scrollWrap = document.getElementsByClassName("main")[0];
+// const speed = 0.1;
 
-// body.style.height = Math.floor(height) + "px";
+// let offset = 0;
+// let callScroll = null;
 
-function smoothScroll() {
-    offset += (window.pageYOffset - offset) * speed;
+// function smoothScroll() {
+//     let delta = window.pageYOffset - offset;
+//     offset += delta * speed;
 
-    var scroll = "translateY(-" + offset + "px) translateZ(0)";
-    scrollWrap.style.transform = scroll;
+//     var scroll = "translateY(-" + offset + "px)";
+//     scrollWrap.style.transform = scroll;
 
-    callScroll = requestAnimationFrame(smoothScroll);
-}
+//     if (Math.abs(delta) > 0.5)
+//         callScroll = requestAnimationFrame(smoothScroll);
+// }
 
-smoothScroll();
+// window.addEventListener('scroll', function (e) {
+//     if (callScroll !== null) cancelAnimationFrame(callScroll);
+//     smoothScroll();
+// });
 
+// FOOTER

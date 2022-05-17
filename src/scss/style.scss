@@ -11,9 +11,17 @@
 
 :root {
     --accent: #dadada;
+    --variable: #0b0b0b;
     --sindex: calc(1vw + 1vh);
     --transition: cubic-bezier(0, 0.9, 0.7, 1);
 }
+
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         --accent: #000000;
+//         --variable: #dadada;
+//     }
+// }
 
 /* content */
 
@@ -28,9 +36,9 @@ body {
 
 
     .arrow-down {
-        display: flex;
-        justify-content: center;
-        position: sticky;
+        mix-blend-mode: difference;
+        position: fixed;
+        width: 100vw;
         bottom: 1em;
         animation: bounce 2s infinite;
 
@@ -47,34 +55,66 @@ body {
                 transform: translateY(-15px);
             }
         }
+
+        .arrow {
+            display: flex;
+            margin: 0 auto;
+        }
     }
 }
 
+a {
+    text-decoration: none;
+    color: var(--accent);
+}
 
 /* fonts */
 
 @mixin font {
     font-weight: 700;
-    line-height: 110%;
+    line-height: 100%;
     text-transform: uppercase;
 }
 
 span {
     font-family: Manrope, sans-serif;
     font-size: .7rem;
+    text-align: center;
     @include font
+}
+
+h1 {
+    font-family: Manrope, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    @include font;
+
+    @media (min-width: 768px) {
+        font-size: 3rem;
+    }
 }
 
 h2 {
     font-family: Manrope, sans-serif;
     font-size: 3rem;
-    @include font
+    text-align: center;
+    @include font;
+}
+
+h3 {
+    font-family: Manrope, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 120%;
 }
 
 
 /* header */
 
 header {
+    mix-blend-mode: difference;
+    color: var(--accent);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     position: sticky;
@@ -100,22 +140,55 @@ header {
 
 /* content */
 
+@mixin bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 main {
     display: flex;
     flex-direction: column;
     gap: 5em;
-    height: 96.3em;
-    margin: 1em;
+    height: auto;
 
     @media (min-width:767px) {
-        height: 95.75em;
+        height: auto;
         align-items: center;
     }
 
-    /* card */
+    /* hi */
+    .hello {
+        margin: 1em 0;
+    }
+
+    /* about */
+    .about {
+        margin: 1em 1em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @media (min-width:767px) {
+            width: 60em;
+        }
+    }
+
+    /* cards */
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 8em;
+
+        @media (min-width:767px) {
+            gap: 5em;
+        }
+    }
 
     .card-item {
         position: relative;
+        margin: 0 1em 0 1em;
         z-index: -2;
         min-height: 70vh;
         border-radius: 1em;
@@ -129,9 +202,7 @@ main {
             right: 0;
             left: 0;
             bottom: 0;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
+            @include bg;
 
             .card-mobile {
                 position: absolute;
@@ -139,17 +210,10 @@ main {
                 top: 0;
                 right: 0;
                 left: 0;
-                bottom: -25em;
-                transform: scale(.5) translateY(25em);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
+                bottom: -20em;
+                transform: scale(.75) translateY(15em);
+                @include bg;
             }
-        }
-
-        .mp4 {
-            left: -24em;
-            top: -7em;
         }
 
 
@@ -169,14 +233,47 @@ main {
             color: var(--accent);
         }
 
+        .lock {
+            margin: 1.5em 0;
+            text-align: center;
+        }
+
         .card-logo {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(var(--sindex)*30);
+            height: calc(var(--sindex)*20);
 
             @media (min-width:767px) {
-                height: calc(var(--sindex)*16);
+                height: calc(var(--sindex)*10);
+            }
+        }
+    }
+
+    .hire {
+        width: 100vw;
+        padding-top: 4em;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        color: var(--accent);
+        background-color: var(--variable);
+
+        .malito {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 10em;
+            min-height: 10em;
+            margin: 20em 0;
+            padding: 1em;
+            border-radius: 10em;
+            background: var(--accent);
+            color: var(--variable);
+            mix-blend-mode: difference;
+
+            @media (min-width:767px) {
+                margin: 8em 0;
             }
         }
     }
