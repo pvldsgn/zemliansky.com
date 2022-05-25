@@ -58,5 +58,8 @@
     "webp-converter": "^2.2.3",
     "webpack": "^5.72.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "git": "^0.1.5"
   }
 }
