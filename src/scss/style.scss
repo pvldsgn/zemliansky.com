@@ -183,7 +183,7 @@ main {
 
     .cards {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 8em;
 
         @media (min-width:767px) {
