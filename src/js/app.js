@@ -1,7 +1,11 @@
+// import sphere from './sphere.js'
+// js
 import * as flsFunctions from "./modules/functions.js";
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-// import { TweenMax } from "gsap/all.js";
+
+// 2D
+
 gsap.registerPlugin(ScrollTrigger);
 
 flsFunctions.isWebp();
@@ -16,12 +20,12 @@ gsap.to(".card-bg", {
     y: 110
 });
 
-gsap.to(".main-bg", {
-    scrollTrigger: {
-        scrub: 2
-    },
-    y: 150
-});
+// gsap.to(".main-bg", {
+//     scrollTrigger: {
+//         scrub: 2
+//     },
+//     y: 150
+// });
 
 // move mobile
 gsap.to(".card-mobile", {
@@ -64,3 +68,11 @@ gsap.to(".arrow", {
 // });
 
 // FOOTER
+
+const scrollY = window.scrollY
+
+window.addEventListener('scroll', () => {
+    scrollY = window.scrollY
+
+    console.log(scrollY)
+})

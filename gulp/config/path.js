@@ -12,6 +12,7 @@ export const path = {
         files: `${buildFolder}/files/`,
         images: `${buildFolder}/img/`,
         fonts: `${buildFolder}/fonts/`,
+        textures: `${buildFolder}/textures/`
     },
     src: {
         html: `${srcFolder}/*.html`, //.pug
@@ -20,7 +21,8 @@ export const path = {
         files: `${srcFolder}/files/**/*.*`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,mp4}`,
         svg: `${srcFolder}/img/**/*.svg`,
-        svgicons: `${srcFolder}/img/svg/*.svg`
+        svgicons: `${srcFolder}/img/svg/*.svg`,
+        textures: `${srcFolder}/textures/*.*`
     },
     watch: {
         html: `${srcFolder}/**/*.html`, //.pug

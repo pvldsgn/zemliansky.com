@@ -47,6 +47,11 @@
   font-weight: 600;
   font-style: normal;
 }
+/* webgl */
+.webgl {
+  border: 1px solid;
+}
+
 /* main */
 * {
   box-sizing: border-box;
